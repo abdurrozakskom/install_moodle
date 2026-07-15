@@ -125,11 +125,8 @@ sudo reboot
 
 ```bash
 # Clone repository ini
-git clone https://github.com/username/moodle-server-installer.git
-cd moodle-server-installer
-
-# Atau unduh skrip tunggal
-wget https://raw.githubusercontent.com/username/moodle-server-installer/main/install_moodle.sh
+git clone https://github.com/abdurrozakskom/install_moodle.git
+cd install_moodle
 ```
 
 ### 3️⃣ Jalankan Skrip
@@ -166,12 +163,12 @@ MOODLE_VERSION="MOODLE_502_STABLE"
 MOODLE_DIR="/var/www/moodle"
 MOODLE_DATA_DIR="/var/www/moodledata"
 
-DB_NAME="jackdbs_moodle"
-DB_USER="jackusr_moodle"
-DB_PASS="jackpsw_moodle"        # ⚠️ Ganti dengan password yang kuat!
+DB_NAME="dbs_moodle"
+DB_USER="usr_moodle"
+DB_PASS="pwd_moodle"        # ⚠️ Ganti dengan password yang kuat!
 
 ADMIN_USER="adminlms"
-ADMIN_PASS="TJKTdipassword123#"  # ⚠️ Ganti dengan password yang kuat!
+ADMIN_PASS="Merdeka@1945"  # ⚠️ Ganti dengan password yang kuat!
 ADMIN_EMAIL="adminlms@smkyasmida.sch.id"
 SITE_NAME="LMS TJKT SMKS YASMIDA"
 SITE_SHORT="TJKT"
@@ -235,8 +232,8 @@ sudo certbot --apache -d yourdomain.com
 
 | Layanan | Username | Password |
 |---------|----------|----------|
-| **Moodle Admin** | `adminlms` | `TJKTdipassword123#` |
-| **MariaDB User** | `jackusr_moodle` | `jackpsw_moodle` |
+| **Moodle Admin** | `adminlms` | `Merdeka@1945` |
+| **MariaDB User** | `usr_moodle` | `pwd_moodle` |
 | **MariaDB Root** | `root` | *(system auth)* |
 
 ### Mengganti Password Moodle Admin
@@ -252,7 +249,7 @@ sudo -u www-data php /var/www/moodle/admin/cli/reset_password.php \
 sudo mariadb -u root
 ```
 ```sql
-ALTER USER 'jackusr_moodle'@'%' IDENTIFIED BY 'new_secure_password';
+ALTER USER 'usr_moodle'@'%' IDENTIFIED BY 'new_secure_password';
 FLUSH PRIVILEGES;
 EXIT;
 ```
@@ -510,7 +507,7 @@ in the Software without restriction...
 
 | Kontak | Detail |
 |--------|--------|
-| 📧 Email | adminlms@smkyasmida.sch.id |
+| 📧 Email | abdurrozak.skom@gmail.com |
 | 🌐 Website | [smkyasmida.sch.id](http://smkyasmida.sch.id) |
 | 📍 Alamat | SMKS YASMIDA, Indonesia |
 | 👨‍💻 Maintainer | Tim IT TJKT |
